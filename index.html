@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>AI活用のためのガードレールを整えよう｜経営者向け無料セミナー（6/10）</title>
+<meta name="description" content="情報漏洩・誤送信・判断の誤り・シャドーAI・権限の暴走。便利さの裏のリスクから会社を守る「ガードレール設計」を学ぶ、経営者・管理職向けの無料セミナー。6/10（水）開催・定員30名。">
+<meta property="og:title" content="AI活用のためのガードレールを整えよう｜経営者向け無料セミナー">
+<meta property="og:description" content="禁止でも放任でもなく、安心して成果につなげるためのAIガードレール設計。6/10（水）13:00-15:00・参加費無料・定員30名。">
+<meta property="og:type" content="website">
+<!--
+  ============================================================
+  セミナー申込ランディングページ（単一HTMLファイル・自己完結）
+  対象イベント：6/10 無料体験セミナー（チラシの入口イベント）
+  公開セミナー版（29,800円）に流用する場合は、料金・申込文言を差し替える。
+
+  ▼ 設定済み
+   - 申込受信メール（末尾SUBMIT設定スクリプトの MAILTO_TO）／ 問い合わせ先：里平会事務局
+  ▼ 意図的に空欄のまま（決まり次第ページを更新）
+   - 会場（現在「調整中」と表示）／ 講師情報（「決まり次第ご案内」と表示）
+  ============================================================
+-->
+<style>
+  :root{
+    --navy:#12284a; --navy2:#1d3a63; --navy3:#27508a;
+    --accent:#ffd23f; --accent-dark:#e6b400;
+    --green:#2e9e5b; --red:#d64545;
+    --ink:#1f2733; --muted:#5b6776; --line:#e3e8ef;
+    --bg:#f4f6f9; --card:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",YuGothic,Meiryo,sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .wrap{max-width:980px;margin:0 auto;padding:0 20px;}
+  .section{padding:72px 0;}
+  .section-alt{background:#fff;}
+  h2.title{
+    font-size:30px;line-height:1.4;text-align:center;color:var(--navy);
+    margin-bottom:8px;font-weight:800;
+  }
+  .title-en{display:block;font-size:13px;color:var(--navy3);letter-spacing:.18em;font-weight:700;}
+  .title-bar{width:54px;height:4px;background:var(--accent);margin:14px auto 36px;border-radius:2px;}
+  .lead-center{text-align:center;color:var(--muted);font-size:16px;margin-bottom:32px;}
+
+  /* ===== ヘッダー ===== */
+  .nav{
+    position:sticky;top:0;z-index:50;background:rgba(18,40,74,.97);
+    color:#fff;backdrop-filter:blur(4px);
+  }
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;}
+  .nav .brand{font-weight:800;font-size:15px;letter-spacing:.02em;}
+  .nav .brand small{display:block;font-weight:500;font-size:11px;color:var(--accent);letter-spacing:.1em;}
+  .nav .nav-cta{
+    background:var(--accent);color:var(--navy);font-weight:800;font-size:13px;
+    padding:9px 18px;border-radius:999px;text-decoration:none;white-space:nowrap;
+  }
+
+  /* ===== ヒーロー ===== */
+  .hero{
+    position:relative;overflow:hidden;color:#fff;padding:58px 0 0;
+    background:
+      radial-gradient(820px 380px at 80% -8%, rgba(39,80,138,.6), transparent 70%),
+      radial-gradient(680px 460px at -8% 115%, rgba(255,210,63,.12), transparent 70%),
+      linear-gradient(165deg,#0f2546 0%,var(--navy) 46%,var(--navy2) 100%);
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background-image:radial-gradient(rgba(255,255,255,.07) 1.3px,transparent 1.3px);
+    background-size:26px 26px;
+    -webkit-mask-image:linear-gradient(180deg,#000,transparent 78%);
+    mask-image:linear-gradient(180deg,#000,transparent 78%);
+  }
+  .hero::after{
+    content:"";position:absolute;right:-130px;top:30px;width:380px;height:380px;
+    pointer-events:none;
+    background:radial-gradient(circle,rgba(255,210,63,.2),transparent 62%);
+  }
+  .hero-grid{
+    position:relative;z-index:1;
+    display:grid;grid-template-columns:1.25fr .8fr;gap:28px;align-items:center;
+    padding-bottom:62px;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(255,255,255,.08);border:1px solid rgba(255,210,63,.4);
+    font-size:12.5px;font-weight:700;padding:7px 15px;border-radius:999px;letter-spacing:.03em;
+  }
+  .eyebrow::before{
+    content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);
+    box-shadow:0 0 0 4px rgba(255,210,63,.25);
+  }
+  .hero h1{font-size:46px;line-height:1.3;font-weight:900;margin:20px 0 16px;}
+  .hero h1 .mark{
+    display:inline-block;color:var(--navy);background:var(--accent);
+    padding:2px 13px;border-radius:8px;transform:rotate(-1.8deg);
+    box-shadow:0 9px 22px rgba(255,210,63,.4);
+  }
+  .hero .sub{font-size:16.5px;color:#cdd9ea;font-weight:500;line-height:1.85;margin-bottom:22px;}
+  .hero .sub strong{color:var(--accent);font-weight:800;}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:24px;}
+  .chip{
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);
+    border-radius:9px;padding:9px 14px;font-size:13.5px;font-weight:700;
+  }
+  .chip .em{color:var(--accent);font-size:15px;}
+  .chip.free{
+    background:var(--accent);color:var(--navy);border-color:var(--accent);
+    box-shadow:0 6px 16px rgba(255,210,63,.3);
+  }
+  .btn{
+    display:inline-block;text-decoration:none;font-weight:800;text-align:center;
+    border-radius:999px;transition:transform .14s ease,box-shadow .14s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{
+    position:relative;overflow:hidden;
+    background:linear-gradient(180deg,#ffe488,var(--accent));color:var(--navy);
+    font-size:18px;padding:18px 46px;box-shadow:0 12px 28px rgba(255,210,63,.42);
+  }
+  .btn-primary small{display:block;font-size:12px;font-weight:700;color:var(--navy2);}
+  .btn-primary::after{
+    content:"";position:absolute;top:0;left:-60%;width:38%;height:100%;
+    background:linear-gradient(100deg,transparent,rgba(255,255,255,.65),transparent);
+    transform:skewX(-20deg);animation:shine 3.8s ease-in-out infinite;
+  }
+  @keyframes shine{0%,62%{left:-60%;}100%{left:130%;}}
+  .btn-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;}
+  .btn-note{font-size:12.5px;color:#aebccf;margin-top:12px;}
+  .hero-visual{position:relative;display:flex;align-items:center;justify-content:center;min-height:280px;}
+  .shield-glow{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    width:310px;height:310px;border-radius:50%;
+    background:radial-gradient(circle,rgba(255,210,63,.24),transparent 64%);
+  }
+  .shield{
+    position:relative;width:208px;height:238px;
+    background:linear-gradient(165deg,#356abf,#15315c);
+    clip-path:polygon(0 0,100% 0,100% 62%,50% 100%,0 62%);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    box-shadow:0 26px 52px rgba(0,0,0,.45);
+  }
+  .shield::before{
+    content:"";position:absolute;inset:7px;
+    clip-path:polygon(0 0,100% 0,100% 62%,50% 100%,0 62%);
+    border:2px solid rgba(255,210,63,.55);
+  }
+  .shield .ai{
+    font-size:64px;font-weight:900;color:#fff;letter-spacing:.05em;
+    margin-top:-16px;text-shadow:0 5px 16px rgba(0,0,0,.45);
+  }
+  .shield .tag{font-size:10.5px;font-weight:800;letter-spacing:.26em;color:#bccbe2;}
+  .float{animation:float 4.6s ease-in-out infinite;}
+  @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-13px);}}
+  .hero-rail{position:relative;z-index:1;height:30px;
+    background:repeating-linear-gradient(90deg,rgba(255,255,255,.13) 0 3px,transparent 3px 66px);}
+  .hero-rail::before{
+    content:"";position:absolute;left:0;right:0;top:9px;height:11px;
+    background:linear-gradient(180deg,#e3e9f1,#9caec6);
+    border-top:2px solid #fff;border-bottom:2px solid #6e7f99;
+  }
+  .fade-up{opacity:0;transform:translateY(18px);animation:fadeUp .7s ease forwards;}
+  .d1{animation-delay:.05s;}.d2{animation-delay:.16s;}.d3{animation-delay:.28s;}
+  .d4{animation-delay:.4s;}.d5{animation-delay:.52s;}
+  @keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
+
+  /* ===== 問題提起 ===== */
+  .ask{
+    text-align:center;font-size:26px;font-weight:900;color:var(--navy);
+    line-height:1.6;margin-bottom:10px;
+  }
+  .ask .hl{border-bottom:6px solid var(--accent);}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px;}
+  .info-card{border-radius:12px;padding:24px;}
+  .info-card h3{font-size:16px;margin-bottom:12px;}
+  .info-card.loud{background:#eef2f7;}
+  .info-card.loud h3{color:var(--navy3);}
+  .info-card.quiet{background:var(--navy);color:#fff;}
+  .info-card.quiet h3{color:var(--accent);}
+  .info-card ul{list-style:none;}
+  .info-card li{padding:5px 0 5px 22px;position:relative;font-size:15px;}
+  .info-card li::before{content:"";position:absolute;left:0;top:14px;width:8px;height:8px;border-radius:50%;}
+  .info-card.loud li::before{background:var(--navy3);}
+  .info-card.quiet li::before{background:var(--accent);}
+  .pull{
+    text-align:center;font-size:19px;font-weight:800;color:var(--navy);
+    margin-top:28px;padding:18px;background:#fff7da;border-radius:10px;
+  }
+
+  /* ===== 5つのリスク ===== */
+  .risk-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
+  .risk{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:22px 14px;text-align:center;
+  }
+  .risk .ic{
+    width:52px;height:52px;margin:0 auto 12px;border-radius:50%;
+    background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;
+    font-size:24px;
+  }
+  .risk h3{font-size:15px;color:var(--navy);margin-bottom:8px;}
+  .risk p{font-size:12.5px;color:var(--muted);line-height:1.7;}
+
+  /* ===== 解決策 ===== */
+  .solution{background:var(--navy);color:#fff;}
+  .solution h2.title{color:#fff;}
+  .solution .lead-center{color:#cdd9ea;}
+  .eq{
+    display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;
+    margin:8px 0 6px;
+  }
+  .eq-box{
+    background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.2);
+    border-radius:12px;padding:20px 24px;text-align:center;min-width:200px;
+  }
+  .eq-box .k{font-size:13px;color:var(--accent);font-weight:700;}
+  .eq-box .v{font-size:19px;font-weight:800;margin-top:4px;}
+  .eq-op{font-size:28px;font-weight:900;color:var(--accent);}
+  .eq-result{
+    background:var(--accent);color:var(--navy);border:none;font-weight:900;
+  }
+  .eq-result .k{color:var(--navy2);}
+
+  /* ===== 3つの約束 ===== */
+  .promises{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .promise{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:26px 22px;position:relative;
+  }
+  .promise .no{
+    font-size:13px;font-weight:800;color:var(--accent-dark);letter-spacing:.1em;
+  }
+  .promise h3{font-size:17px;color:var(--navy);margin:6px 0 10px;line-height:1.5;}
+  .promise p{font-size:14px;color:var(--muted);}
+
+  /* ===== プログラム ===== */
+  .program{max-width:760px;margin:0 auto;}
+  .mod{
+    display:flex;gap:16px;padding:16px 0;border-bottom:1px dashed var(--line);
+  }
+  .mod:last-child{border-bottom:none;}
+  .mod .mno{
+    flex:none;width:62px;height:34px;border-radius:6px;background:var(--navy);
+    color:#fff;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;
+  }
+  .mod .mtxt h3{font-size:15.5px;color:var(--navy);}
+  .mod .mtxt p{font-size:13.5px;color:var(--muted);}
+  .prog-note{text-align:center;font-size:13px;color:var(--muted);margin-top:20px;}
+
+  /* ===== こんな方へ ===== */
+  .for-list{max-width:680px;margin:0 auto;}
+  .for-item{
+    display:flex;gap:14px;align-items:flex-start;background:var(--card);
+    border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin-bottom:12px;
+  }
+  .for-item .ck{
+    flex:none;width:26px;height:26px;border-radius:50%;background:var(--green);
+    color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:15px;
+  }
+  .for-item p{font-size:15px;}
+
+  /* ===== 開催概要 ===== */
+  .outline{background:var(--navy);color:#fff;}
+  .outline h2.title{color:#fff;}
+  .otable{
+    max-width:680px;margin:0 auto;background:rgba(255,255,255,.05);
+    border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.14);
+  }
+  .orow{display:flex;border-bottom:1px solid rgba(255,255,255,.12);}
+  .orow:last-child{border-bottom:none;}
+  .orow dt{
+    flex:none;width:140px;background:rgba(255,255,255,.06);
+    padding:15px 18px;font-weight:700;font-size:14px;color:var(--accent);
+  }
+  .orow dd{padding:15px 18px;font-size:15px;}
+  .orow dd .big{font-size:20px;font-weight:800;}
+  .orow dd .freeword{color:var(--accent);font-weight:900;}
+
+  /* ===== 講師・主催 ===== */
+  .host{max-width:680px;margin:0 auto;text-align:center;}
+  .host .ph{
+    border:2px dashed var(--line);border-radius:12px;padding:28px;color:var(--muted);
+    font-size:14px;background:var(--card);
+  }
+  .host .ph strong{color:var(--navy);}
+
+  /* ===== FAQ ===== */
+  .faq{max-width:760px;margin:0 auto;}
+  details{
+    background:var(--card);border:1px solid var(--line);border-radius:10px;
+    margin-bottom:12px;overflow:hidden;
+  }
+  summary{
+    cursor:pointer;padding:18px 20px;font-weight:700;font-size:15px;color:var(--navy);
+    list-style:none;position:relative;padding-right:46px;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::after{
+    content:"+";position:absolute;right:20px;top:50%;transform:translateY(-50%);
+    font-size:22px;color:var(--accent-dark);font-weight:900;
+  }
+  details[open] summary::after{content:"–";}
+  details .a{padding:0 20px 18px;font-size:14px;color:var(--muted);}
+
+  /* ===== 申込フォーム ===== */
+  .apply{background:linear-gradient(160deg,var(--navy2),var(--navy));color:#fff;}
+  .apply h2.title{color:#fff;}
+  .apply .lead-center{color:#cdd9ea;}
+  .form-card{
+    max-width:620px;margin:0 auto;background:#fff;border-radius:14px;
+    padding:32px 30px;color:var(--ink);
+  }
+  .field{margin-bottom:16px;}
+  .field label{display:block;font-size:13.5px;font-weight:700;margin-bottom:6px;}
+  .field label .req{color:var(--red);font-size:12px;margin-left:4px;}
+  .field input,.field select,.field textarea{
+    width:100%;border:1px solid var(--line);border-radius:8px;padding:11px 13px;
+    font-size:15px;font-family:inherit;
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{
+    outline:2px solid var(--navy3);border-color:var(--navy3);
+  }
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .form-submit{width:100%;border:none;cursor:pointer;margin-top:8px;}
+  .privacy{font-size:12px;color:var(--muted);text-align:center;margin-top:14px;}
+
+  /* ===== フッター ===== */
+  footer{background:#0d1f3a;color:#9fb0c8;padding:34px 0;font-size:13px;text-align:center;}
+  footer .fbrand{color:#fff;font-weight:800;font-size:15px;margin-bottom:6px;}
+
+  /* ===== スマホ固定CTA ===== */
+  .sticky-cta{
+    position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;
+    background:rgba(18,40,74,.98);padding:10px 16px;
+    box-shadow:0 -4px 16px rgba(0,0,0,.2);
+  }
+  .sticky-cta a{
+    display:block;background:var(--accent);color:var(--navy);text-align:center;
+    font-weight:800;padding:14px;border-radius:999px;text-decoration:none;font-size:16px;
+  }
+
+  /* ===== レスポンシブ ===== */
+  @media(max-width:820px){
+    .section{padding:54px 0;}
+    .hero-grid{grid-template-columns:1fr;gap:4px;padding-bottom:46px;text-align:center;}
+    .hero h1{font-size:31px;}
+    .hero .sub{font-size:14.5px;}
+    .hero-meta,.btn-row{justify-content:center;}
+    .hero-visual{order:-1;min-height:0;margin-bottom:10px;}
+    .shield{width:140px;height:160px;}
+    .shield .ai{font-size:42px;margin-top:-9px;}
+    .shield-glow{width:212px;height:212px;}
+    h2.title{font-size:23px;}
+    .ask{font-size:20px;}
+    .two-col{grid-template-columns:1fr;}
+    .risk-grid{grid-template-columns:1fr 1fr;}
+    .promises{grid-template-columns:1fr;}
+    .eq{flex-direction:column;}
+    .eq-op{transform:rotate(90deg);}
+    .field-row{grid-template-columns:1fr;}
+    .orow{flex-direction:column;}
+    .orow dt{width:100%;}
+    .nav .nav-cta{display:none;}
+    .sticky-cta{display:block;}
+    body{padding-bottom:74px;}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .fade-up,.float,.btn-primary::after{animation:none;}
+    .fade-up{opacity:1;transform:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="nav">
+  <div class="wrap">
+    <div class="brand">AIガードレール経営者セミナー<small>SAFE AI FOR MANAGEMENT</small></div>
+    <a href="#apply" class="nav-cta">無料で申し込む</a>
+  </div>
+</header>
+
+<!-- ヒーロー -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <span class="eyebrow fade-up d1">AIを味方に、リスクをコントロールする時代へ</span>
+      <h1 class="fade-up d2">AI活用のための<br><span class="mark">ガードレール</span>を整えよう。</h1>
+      <p class="sub fade-up d3">ネット情報の表面だけで判断しない。<br><strong>安全にAIを活用する企業が勝つ時代へ。</strong></p>
+      <div class="hero-meta fade-up d4">
+        <span class="chip">📅 <span class="em">6/10</span>（水）13:00–15:00</span>
+        <span class="chip">👤 経営者・管理職</span>
+        <span class="chip">🪑 定員<span class="em">30名</span>・先着順</span>
+        <span class="chip free">参加費 無料</span>
+      </div>
+      <div class="btn-row fade-up d5">
+        <a href="#apply" class="btn btn-primary">無料セミナーに申し込む<small>所要1分・先着30名</small></a>
+      </div>
+      <p class="btn-note fade-up d5">※ お申し込み後、会場をご案内します</p>
+    </div>
+    <div class="hero-visual fade-up d3">
+      <div class="shield-glow"></div>
+      <div class="shield float">
+        <div class="ai">AI</div>
+        <div class="tag">GUARD RAIL</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-rail"></div>
+</section>
+
+<!-- 問題提起 -->
+<section class="section">
+  <div class="wrap">
+    <p class="ask">「うちの社員、AIを<span class="hl">どう使っていますか</span>？」</p>
+    <p class="lead-center">― 即答できないなら、この2時間が必要です。</p>
+    <div class="two-col">
+      <div class="info-card loud">
+        <h3>毎日のように聞こえてくる話</h3>
+        <ul>
+          <li>「AIエージェントを作ろう」</li>
+          <li>「業務を自動化しよう」</li>
+          <li>「生産性が何倍になった」</li>
+          <li>うまくいった、華やかな成功談</li>
+        </ul>
+      </div>
+      <div class="info-card quiet">
+        <h3>まだ、あまり語られない話</h3>
+        <ul>
+          <li>情報漏洩・誤送信</li>
+          <li>もっともらしい嘘による誤判断</li>
+          <li>AIへの権限の持たせすぎ</li>
+          <li>社員による無秩序な利用</li>
+        </ul>
+      </div>
+    </div>
+    <p class="pull">語られないリスクは、準備されないリスクになる。</p>
+  </div>
+</section>
+
+<!-- 5つのリスク -->
+<section class="section section-alt">
+  <div class="wrap">
+    <h2 class="title"><span class="title-en">5 RISKS</span>便利さの裏にある、5つのリスク</h2>
+    <div class="title-bar"></div>
+    <div class="risk-grid">
+      <div class="risk">
+        <div class="ic">🔓</div>
+        <h3>情報漏洩</h3>
+        <p>社内情報や顧客情報が外部に漏れるリスク</p>
+      </div>
+      <div class="risk">
+        <div class="ic">✉️</div>
+        <h3>誤送信・誤実行</h3>
+        <p>AIの判断ミスで信用やコストを失う</p>
+      </div>
+      <div class="risk">
+        <div class="ic">🤖</div>
+        <h3>判断の誤り</h3>
+        <p>もっともらしいウソに騙される</p>
+      </div>
+      <div class="risk">
+        <div class="ic">👥</div>
+        <h3>シャドーAI</h3>
+        <p>ルールがない利用で管理不能になる</p>
+      </div>
+      <div class="risk">
+        <div class="ic">🛡️</div>
+        <h3>権限の暴走</h3>
+        <p>AIに権限を与えすぎ、取り返しのつかない事態に</p>
+      </div>
+    </div>
+    <p class="prog-note">これらは「悪意」ではなく、多くが「善意」と「設計の不在」から起きています。</p>
+  </div>
+</section>
+
+<!-- 解決策 -->
+<section class="section solution">
+  <div class="wrap">
+    <h2 class="title">禁止でも、放任でもなく。</h2>
+    <div class="title-bar"></div>
+    <p class="lead-center">AIを禁止すれば、利用は見えない場所に潜るだけ（シャドーAI）。<br>
+      かといって放任すれば、事故が起きてから気づくことになる。<br>
+      必要なのは、第3の道 ―― <strong style="color:#fff">「設計」</strong>です。</p>
+    <div class="eq">
+      <div class="eq-box"><div class="k">守る</div><div class="v">守る仕組み</div></div>
+      <div class="eq-op">×</div>
+      <div class="eq-box"><div class="k">活かす</div><div class="v">活かす使い方</div></div>
+      <div class="eq-op">=</div>
+      <div class="eq-box eq-result"><div class="k">GOAL</div><div class="v">安心して成果が出るAI活用へ</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3つの約束 -->
+<section class="section">
+  <div class="wrap">
+    <h2 class="title"><span class="title-en">WHAT YOU GET</span>このセミナーで得られること</h2>
+    <div class="title-bar"></div>
+    <div class="promises">
+      <div class="promise">
+        <div class="no">POINT 01</div>
+        <h3>AIの落とし穴と<br>最新リスクを解説</h3>
+        <p>表面情報では見えないAI活用の実態と、企業が直面する5つのリスクを、実際の事故事例を交えて整理します。</p>
+      </div>
+      <div class="promise">
+        <div class="no">POINT 02</div>
+        <h3>ガードレールの<br>作り方と実践方法</h3>
+        <p>「方針・技術・運用・文化」の4層モデルと、用途を3色に仕分ける信号機モデル。明日から使える設計の型を持ち帰れます。</p>
+      </div>
+      <div class="promise">
+        <div class="no">POINT 03</div>
+        <h3>明日から使える<br>AI活用の進め方</h3>
+        <p>経営が答えを出すべき問いと、最初の30/60/90日で何をすべきか。具体的なアクションに落とし込みます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- プログラム -->
+<section class="section section-alt">
+  <div class="wrap">
+    <h2 class="title"><span class="title-en">PROGRAM</span>当日のプログラム（120分）</h2>
+    <div class="title-bar"></div>
+    <div class="program">
+      <div class="mod">
+        <div class="mno">13:00</div>
+        <div class="mtxt"><h3>イントロ ― なぜ今、ガードレールか</h3>
+          <p>「禁止か放任か」ではなく「無秩序か設計か」。本日の見取り図。</p></div>
+      </div>
+      <div class="mod">
+        <div class="mno">13:10</div>
+        <div class="mtxt"><h3>AI活用の現状と、5つのリスク</h3>
+          <p>表面情報と実態のギャップ。情報漏洩・誤送信・判断の誤り・シャドーAI・権限の暴走。</p></div>
+      </div>
+      <div class="mod">
+        <div class="mno">13:50</div>
+        <div class="mtxt"><h3>事例研究 ― 実際に何が起きたか</h3>
+          <p>公になった事故事例から「何のガードレールが欠けていたか」を逆算する。</p></div>
+      </div>
+      <div class="mod">
+        <div class="mno">14:10</div>
+        <div class="mtxt"><h3>ガードレールの作り方 ― 4層モデルと信号機</h3>
+          <p>方針・技術・運用・文化の4層。緑・黄・赤で用途を仕分ける考え方。</p></div>
+      </div>
+      <div class="mod">
+        <div class="mno">14:40</div>
+        <div class="mtxt"><h3>明日からの進め方とまとめ・質疑</h3>
+          <p>経営の意思決定ポイントと、30/60/90日ロードマップ。</p></div>
+      </div>
+    </div>
+    <p class="prog-note">※ プログラムは一部変更になる場合があります。</p>
+  </div>
+</section>
+
+<!-- こんな方へ -->
+<section class="section">
+  <div class="wrap">
+    <h2 class="title"><span class="title-en">FOR YOU</span>こんな方におすすめです</h2>
+    <div class="title-bar"></div>
+    <div class="for-list">
+      <div class="for-item"><span class="ck">✓</span><p>「AIを使わせるべきか、禁止すべきか」で迷っている経営者・役員</p></div>
+      <div class="for-item"><span class="ck">✓</span><p>現場が勝手にAIを使い始めていて、漠然とした不安を感じている方</p></div>
+      <div class="for-item"><span class="ck">✓</span><p>AI活用を進めたいが、リスク管理の全体像が描けていない方</p></div>
+      <div class="for-item"><span class="ck">✓</span><p>情報システム・DX推進の担当として、経営に判断材料を示したい方</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 開催概要 -->
+<section class="section outline">
+  <div class="wrap">
+    <h2 class="title"><span class="title-en">OUTLINE</span>開催概要</h2>
+    <div class="title-bar"></div>
+    <dl class="otable">
+      <div class="orow"><dt>日時</dt><dd><span class="big">6月10日（水）13:00–15:00</span></dd></div>
+      <div class="orow"><dt>会場</dt><dd>調整中（お申し込み後にご案内します）</dd></div>
+      <div class="orow"><dt>参加費</dt><dd><span class="freeword">無料</span></dd></div>
+      <div class="orow"><dt>対象</dt><dd>経営者・管理職・ご担当者様</dd></div>
+      <div class="orow"><dt>定員</dt><dd>30名（先着順）</dd></div>
+      <div class="orow"><dt>運営・企画</dt><dd>里平会事務局</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- 講師・主催 -->
+<section class="section">
+  <div class="wrap">
+    <h2 class="title"><span class="title-en">SPEAKER</span>講師紹介</h2>
+    <div class="title-bar"></div>
+    <div class="host">
+      <div class="ph">
+        <strong>講師は決まり次第、本ページでご案内いたします。</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-alt">
+  <div class="wrap">
+    <h2 class="title"><span class="title-en">FAQ</span>よくあるご質問</h2>
+    <div class="title-bar"></div>
+    <div class="faq">
+      <details>
+        <summary>AIの専門知識がなくても理解できますか？</summary>
+        <div class="a">はい。技術用語は最小限にし、必要なものはその場で説明します。経営判断としてAIリスクを捉える内容なので、専門知識は不要です。</div>
+      </details>
+      <details>
+        <summary>結局、AIは禁止するのが一番安全ではないですか？</summary>
+        <div class="a">禁止しても利用はなくならず、見えない場所（シャドーAI）に潜るだけです。リスクは消えず、見えなくなり、さらに競争力も失います。本セミナーは「禁止」ではなく「設計」という現実的な第3の道をお伝えします。</div>
+      </details>
+      <details>
+        <summary>うちは小さな会社です。それでも必要ですか？</summary>
+        <div class="a">必要です。情報漏洩や誤送信の多くは外部から狙われて起きるのではなく、社内の善意の社員がうっかり起こします。むしろ専任部門のない中小企業ほど、シャドーAIが起きやすいのが実情です。</div>
+      </details>
+      <details>
+        <summary>人手も予算も限られています。何から始めれば？</summary>
+        <div class="a">最初の一歩（責任者を決める・利用実態を調べる・基本ルールを文章化する）は、ほぼ費用ゼロで始められます。セミナーでは、限られた資源で何から着手すべきかを具体的にお伝えします。</div>
+      </details>
+      <details>
+        <summary>競合はもう進んでいます。今からで間に合いますか？</summary>
+        <div class="a">間に合います。多くの企業は「導入はしたが設計はしていない」段階で、ガードレールまで整えた会社はまだ少数です。今から設計込みで始める方が、無秩序に使い始めた企業より速く安全に成果を出せます。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 申込フォーム -->
+<section class="section apply" id="apply">
+  <div class="wrap">
+    <h2 class="title">無料セミナーお申し込み</h2>
+    <div class="title-bar"></div>
+    <p class="lead-center">定員30名（先着順）です。お早めにお申し込みください。</p>
+    <div class="form-card">
+      <!-- 送信方法はページ末尾の「SUBMIT設定スクリプト」で設定（初期値：mailto／サーバー不要） -->
+      <form id="applyForm">
+        <div class="field">
+          <label>会社名・団体名<span class="req">必須</span></label>
+          <input type="text" name="company" required placeholder="例：株式会社○○">
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label>お名前<span class="req">必須</span></label>
+            <input type="text" name="name" required placeholder="例：山田 太郎">
+          </div>
+          <div class="field">
+            <label>役職</label>
+            <input type="text" name="title" placeholder="例：代表取締役">
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label>メールアドレス<span class="req">必須</span></label>
+            <input type="email" name="email" required placeholder="例：info@example.com">
+          </div>
+          <div class="field">
+            <label>電話番号</label>
+            <input type="tel" name="tel" placeholder="例：03-0000-0000">
+          </div>
+        </div>
+        <div class="field">
+          <label>参加人数<span class="req">必須</span></label>
+          <select name="people" required>
+            <option value="">選択してください</option>
+            <option value="1">1名</option>
+            <option value="2">2名</option>
+            <option value="3">3名</option>
+            <option value="4+">4名以上</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>ご質問・ご要望（任意）</label>
+          <textarea name="message" rows="3" placeholder="当日聞いてみたいことなど"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary form-submit">この内容で申し込む</button>
+        <p class="privacy">ご記入いただいた情報は、本セミナーの運営・ご連絡の目的にのみ使用します。</p>
+      </form>
+      <div id="formThanks" style="display:none;text-align:center;padding:26px 10px;">
+        <div style="font-size:42px;color:var(--green)">✓</div>
+        <h3 style="color:var(--navy);font-size:20px;margin:6px 0">お申し込みありがとうございます</h3>
+        <p style="color:var(--muted);font-size:14px">
+          メールソフトが開きます。内容をご確認のうえ、そのまま送信してください。<br>
+          メールが開かない場合は、お手数ですが下記までご連絡ください。<br>
+          お問い合わせ：里平会事務局（wakuwakuplant@gmail.com）
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer>
+  <div class="wrap">
+    <div class="fbrand">AI活用のためのガードレールを整えよう</div>
+    <div>経営者・管理職・ご担当者様向け 無料セミナー</div>
+    <div style="margin-top:8px">運営・企画・お問い合わせ：里平会事務局（wakuwakuplant@gmail.com）</div>
+  </div>
+</footer>
+
+<!-- スマホ固定CTA -->
+<div class="sticky-cta">
+  <a href="#apply">無料セミナーに申し込む（先着30名）</a>
+</div>
+
+<!-- ============================================================
+     SUBMIT設定スクリプト ― 申込フォームの送信処理
+     SUBMIT_MODE：'mailto'  = 申込内容を主催者宛メールにする（サーバー不要・初期値）
+                  'formspree' = Formspree等のフォームサービスへ送信（ENDPOINTにURL）
+     公開前に MAILTO_TO を主催者の実メールアドレスに変更してください。
+     Googleフォーム利用時も 'formspree' と同方式で接続可（各inputのnameを
+     Googleフォームの entry.XXXX に合わせる必要あり）。
+============================================================ -->
+<script>
+var SUBMIT_MODE = 'mailto';
+var MAILTO_TO   = 'wakuwakuplant@gmail.com';
+var ENDPOINT    = '[[FORMSPREE等のエンドポイントURL]]';
+
+(function(){
+  var form = document.getElementById('applyForm');
+  var thanks = document.getElementById('formThanks');
+  if(!form) return;
+  function val(n){ var el=form.elements[n]; return el ? el.value.trim() : ''; }
+  function done(){
+    form.style.display='none';
+    if(thanks){ thanks.style.display='block'; thanks.scrollIntoView({behavior:'smooth',block:'center'}); }
+  }
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!form.reportValidity()) return;
+
+    if(SUBMIT_MODE === 'formspree'){
+      fetch(ENDPOINT,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)})
+        .then(function(r){ r.ok ? done() : alert('送信に失敗しました。お手数ですがお電話でお申し込みください。'); })
+        .catch(function(){ alert('送信に失敗しました。お手数ですがお電話でお申し込みください。'); });
+      return;
+    }
+    /* mailto モード（既定） */
+    var fields=[['会社名・団体名',val('company')],['お名前',val('name')],['役職',val('title')],
+      ['メールアドレス',val('email')],['電話番号',val('tel')],['参加人数',val('people')],
+      ['ご質問・ご要望',val('message')]];
+    var body='下記の内容で無料セミナーに申し込みます。\n\n';
+    fields.forEach(function(f){ body += f[0]+'：'+(f[1]||'（未記入）')+'\n'; });
+    window.location.href='mailto:'+MAILTO_TO
+      +'?subject='+encodeURIComponent('【セミナー申込】AI活用のためのガードレールを整えよう（6/10）')
+      +'&body='+encodeURIComponent(body);
+    done();
+  });
+})();
+</script>
+
+</body>
+</html>
